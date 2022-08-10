@@ -12,7 +12,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Time Label" FontSize="20"
+                <Label Text="{Binding Time}" FontSize="20"
                        VerticalTextAlignment="Center"
                        HorizontalTextAlignment="Center">
                 </Label>
