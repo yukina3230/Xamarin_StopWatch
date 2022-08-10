@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dg="clr-namespace:Xamarin.Forms.DataGrid;assembly=Xamarin.Forms.DataGrid"
+             x:Class="Xamarin_StopWatch.MainPage">
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="10" CornerRadius="0">
+            <Label Text="Stop Watch" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
+        </Frame>
+        <StackLayout Margin="10" MinimumHeightRequest="100">
+            <Grid HeightRequest="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Time Label" FontSize="20"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center">
+                </Label>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Text="START"></Button>
+                <Button Grid.Column="1" Text="PAUSE"></Button>
+                <Button Grid.Column="2" Text="STOP"></Button>
+            </Grid>
+        </StackLayout>
+        <dg:DataGrid ItemsSource="{Binding Data}" SelectionEnabled="True"
+               RowHeight="70" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8">
+            <dg:DataGrid.Columns>
+                <dg:DataGridColumn Title="Id"></dg:DataGridColumn>
+                <dg:DataGridColumn Title="Start Time"></dg:DataGridColumn>
+                <dg:DataGridColumn Title="End Time"></dg:DataGridColumn>
+                <dg:DataGridColumn Title="ReasonId"></dg:DataGridColumn>
+            </dg:DataGrid.Columns>
+        </dg:DataGrid>
+    </StackLayout>
+</ContentPage>
