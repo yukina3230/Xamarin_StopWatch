@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CommunityToolkit.Mvvm;
-using CommunityToolkit.Mvvm.ComponentModel;
+using Xamarin.CommunityToolkit.ObjectModel;
 
 namespace Xamarin_StopWatch.ViewModels
 {
