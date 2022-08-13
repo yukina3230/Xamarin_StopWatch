@@ -8,7 +8,7 @@ namespace Xamarin_StopWatch.Models.Repositories
 {
     public class DataRepository
     {
-        const string url = @"http://10.1.0.112/api/Test";
+        string url = APIHelper.API_Url + "Test";
 
         public string GetData()
         {

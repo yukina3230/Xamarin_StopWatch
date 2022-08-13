@@ -10,7 +10,8 @@ namespace Xamarin_StopWatch.ViewModels
     {
         public MainViewModel()
         {
-            StartCommand = new RelayCommand<object>(o => StartExecute(), o => StartCanExecute());
+            //StartCommand = new RelayCommand<object>(o => StartExecute(), o => StartCanExecute());
+            InsertCommand = new RelayCommand<object>(o => InsertExecute(), o => InsertCanExecute());
         }
     }
 }

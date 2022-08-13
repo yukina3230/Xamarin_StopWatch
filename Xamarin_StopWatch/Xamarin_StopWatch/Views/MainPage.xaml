@@ -5,9 +5,9 @@
              x:Class="Xamarin_StopWatch.MainPage">
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="10" CornerRadius="0">
-            <Label Text="Stop Watch" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
+            <Label Text="Stopwatch" HorizontalTextAlignment="Center" TextColor="White" FontSize="26"/>
         </Frame>
-        <StackLayout Margin="10" MinimumHeightRequest="100">
+        <!--<StackLayout Margin="10" MinimumHeightRequest="100">
             <Grid HeightRequest="50">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
@@ -27,15 +27,34 @@
                 <Button Grid.Column="1" Text="PAUSE"></Button>
                 <Button Grid.Column="2" Text="STOP"></Button>
             </Grid>
-        </StackLayout>
-        <dg:DataGrid ItemsSource="{Binding Data}" SelectionEnabled="True"
+            <dg:DataGrid ItemsSource="{Binding Data}" SelectionEnabled="True"
                RowHeight="70" HeaderHeight="50" BorderColor="#CCCCCC" HeaderBackground="#E0E6F8">
-            <dg:DataGrid.Columns>
-                <dg:DataGridColumn Title="Id"></dg:DataGridColumn>
-                <dg:DataGridColumn Title="Start Time"></dg:DataGridColumn>
-                <dg:DataGridColumn Title="End Time"></dg:DataGridColumn>
-                <dg:DataGridColumn Title="ReasonId"></dg:DataGridColumn>
-            </dg:DataGrid.Columns>
-        </dg:DataGrid>
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="Id"></dg:DataGridColumn>
+                    <dg:DataGridColumn Title="Start Time"></dg:DataGridColumn>
+                    <dg:DataGridColumn Title="End Time"></dg:DataGridColumn>
+                    <dg:DataGridColumn Title="ReasonId"></dg:DataGridColumn>
+                </dg:DataGrid.Columns>
+            </dg:DataGrid>
+        </StackLayout>-->
+        <StackLayout Margin="10" MinimumHeightRequest="100">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Entry Grid.Row="0" Text="{Binding Name}" Placeholder="Name"></Entry>
+                <Entry Grid.Row="1" Text="{Binding Quantity}" Placeholder="Quantity"></Entry>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Command="{Binding InsertCommand}" Text="INSERT"></Button>
+                    <Button Grid.Column="1" Text="UPDATE"></Button>
+                </Grid>
+            </Grid>
+        </StackLayout>
     </StackLayout>
 </ContentPage>
