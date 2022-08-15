@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using Xamarin.Forms;
+using Xamarin_StopWatch.Models.Interfaces;
 
 namespace Xamarin_StopWatch.Models.Repositories
 {
@@ -11,7 +11,8 @@ namespace Xamarin_StopWatch.Models.Repositories
     {
         string _name;
         int _quantity;
-        string url = APIHelper.API_Url + "Insert?";
+        string url = APIHelper.API_Url;
+        private readonly IMessage _messageService;
 
         public InsertRepository(string name, int quantity)
         {
@@ -23,7 +24,7 @@ namespace Xamarin_StopWatch.Models.Repositories
         {
             using (HttpClient client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://10.1.0.112/");
+                client.BaseAddress = new Uri(url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -43,26 +44,12 @@ namespace Xamarin_StopWatch.Models.Repositories
                 HttpResponseMessage response = await client.PostAsJsonAsync("api/Insert", values);
                 if (response.IsSuccessStatusCode)
                 {
-                    await DisplayAlert("Alert", "You have been alerted", "OK");
+                    await _messageService.ShowAsync("Success");
                 }
                 else
                 {
                     Console.WriteLine("Internal server Error");
                 }
-
-                //Dictionary<string, string> values = new Dictionary<string, string>
-                //{
-                //    { "name", _name },
-                //    { "quantity", _quantity.ToString() }
-                //};
-                //var content = new FormUrlEncodedContent(new[]
-                //{
-                //    new KeyValuePair<string, string>("name", _name),
-                //    new KeyValuePair<string, string>("quantity", _quantity.ToString())
-                //});
-
-                //HttpResponseMessage response = await client.PostAsync(url, content);
-                //var responseString = await response.Content.ReadAsStringAsync();
             }
         }
     }

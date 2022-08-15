@@ -17,6 +17,7 @@ namespace Xamarin_StopWatch
         {
             InitializeComponent();
             BindingContext = viewModel;
+            DependencyService.Register<Models.Interfaces.IMessage, Models.Services.MessageService>();
         }
     }
 }
