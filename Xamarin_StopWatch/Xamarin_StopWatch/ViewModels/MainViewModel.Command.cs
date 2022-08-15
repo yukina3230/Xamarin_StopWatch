@@ -28,7 +28,6 @@ namespace Xamarin_StopWatch.ViewModels
             }
             catch (Exception)
             {
-
                 throw;
             }
             

@@ -15,5 +15,8 @@ namespace Xamarin_StopWatch.ViewModels
 
         private int _Quantity;
         public int Quantity { get => _Quantity; set { _Quantity = value; OnPropertyChanged(); } }
+
+        private int _Alert;
+        public int Alert { get => _Alert; set { _Alert = value; OnPropertyChanged(); } }
     }
 }
